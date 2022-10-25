@@ -5,7 +5,7 @@ import { AuthContext } from '../contexts/UserContext';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
-    const { loginUser, googleLogin } = useContext(AuthContext);
+    const { loginUser, googleLogin, githubLogin } = useContext(AuthContext);
 
     // handle event on the login form
     const handleSubmit = (event) => {
@@ -35,7 +35,12 @@ const Login = () => {
     }
     // handle github log in
     const handleGithubLogin = () => {
-
+        githubLogin()
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(err => console.error(err))
     }
     return (
         <div>
