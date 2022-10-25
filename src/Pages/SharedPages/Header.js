@@ -1,9 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaUserAlt } from 'react-icons/fa';
 
 const Header = () => {
     return (
         <div>
-            <h1>this is header</h1>
+            <div className="navbar bg-base-300">
+                <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                <div className='ml-auto'>
+                    <Link className='mx-2' to='/'>Home</Link>
+                    <Link className='mx-2' to='/login'>Login</Link>
+                    <Link className='mx-2' to='/signup'> Sign Up</Link>
+                    <div>
+                        {
+                            false ? <></> : <FaUserAlt />
+                        }
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
