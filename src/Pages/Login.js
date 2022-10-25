@@ -16,13 +16,13 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="text" placeholder="email" className="input input-bordered" />
+                                <input type="email" name='email' placeholder="email" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="text" placeholder="password" className="input input-bordered" />
+                                <input type="password" name='password' placeholder="password" className="input input-bordered" />
                                 <label className="text-xs mt-2">
                                     New to this site? <Link to='/signup' className='text-blue-600'>Signup Here</Link>
                                 </label>
