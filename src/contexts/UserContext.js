@@ -13,6 +13,8 @@ const UserContext = ({ children }) => {
     const [user, setUser] = useState(null);
     // set loading state for handle private route location
     const [loader, setLoader] = useState(true);
+    // theme toggle state
+    const [dark, setDark] = useState(false)
 
     // create various methods auth provider
     const googleProvider = new GoogleAuthProvider();
@@ -70,6 +72,8 @@ const UserContext = ({ children }) => {
     const authInfo = {
         user,
         loader,
+        dark,
+        setDark,
         createUser,
         loginUser,
         googleLogin,
