@@ -30,6 +30,7 @@ const Head = () => {
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link className='mx-2' to='/'>Home</Link></li>
                         <li><Link className='mx-2' to='/courses'>Courses</Link></li>
+                        <li><Link className='mx-2' to='/profile'>Profile</Link></li>
                         <div>
                             {
                                 user && user.uid ? <button onClick={handleLogout} className='btn btn-sm btn-warning rounded-2xl mx-2'>Sign Out</button> :
@@ -45,6 +46,7 @@ const Head = () => {
                 <ul className="menu menu-horizontal p-0">
                     <li><Link className='mx-2' to='/'>Home</Link></li>
                     <li><Link className='mx-2' to='/courses'>Courses</Link></li>
+                    <li><Link className='mx-2' to='/profile'>Profile</Link></li>
                 </ul>
                 <div>
                     {
@@ -63,7 +65,7 @@ const Head = () => {
                         <p className='mx-2 font-bold'>{user ? <>{user.displayName}</> : <></>}</p>
                     }
                     {
-                        user?.photoURL ? <img className='h-8 w-8 rounded-full' src={user?.photoURL} alt="" /> : <FaUserAlt />
+                        user?.photoURL ? <Link to='/profile'><img className='h-8 w-8 rounded-full' src={user?.photoURL} alt="" /></Link> : <FaUserAlt />
                     }
                 </div>
             </div>
