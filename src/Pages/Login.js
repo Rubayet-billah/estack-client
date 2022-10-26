@@ -1,11 +1,15 @@
 import React from 'react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/UserContext';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
     const { loginUser, googleLogin, githubLogin } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     // handle event on the login form
     const handleSubmit = (event) => {
@@ -20,6 +24,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user)
                 form.reset();
+                navigate(from, { replace: true })
             })
             .catch(err => console.error(err))
     }
@@ -30,6 +35,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                navigate('/')
             })
             .catch(err => console.error(err))
     }
@@ -39,6 +45,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                navigate('/')
             })
             .catch(err => console.error(err))
     }
