@@ -3,10 +3,13 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { FaUserAlt, FaToggleOn, FaToggleOff } from 'react-icons/fa';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/UserContext';
+import { useState } from 'react';
 
 const Header = () => {
     const { user, logoutUser, dark, setDark } = useContext(AuthContext);
-    console.log(user)
+
+    // navbar toggle state
+    const [open, setOpen] = useState(false)
 
     const navigate = useNavigate();
 
@@ -20,39 +23,48 @@ const Header = () => {
     }
     return (
         <div>
-            <div className="navbar bg-base-300">
-                <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
-
-
-
-                <div className='mx-auto'>
-                    <Link className='mx-2' to='/'>Home</Link>
-                    <Link className='mx-2' to='/courses'>Courses</Link>
-
+            <div className="md:navbar bg-base-300">
+                <div className='flex justify-between md:block'>
+                    <Link className="btn btn-ghost normal-case text-xl">daisyUI</Link>
+                    <button onClick={() => setOpen(!open)}>{open ? 'open' : 'close'}</button>
                 </div>
-                <button onClick={() => setDark(!dark)} className='flex items-center'>
-                    <span className='mx-1'>Dark</span> {dark ? <FaToggleOff /> : <FaToggleOn />}
-                </button>
 
-                <div>
-                    {
-                        <p className='mx-2'>{user ? <>{user.displayName}</> : <></>}</p>
-                    }
-                    {
-                        user?.photoURL ? <img className='h-8 w-8 rounded-full' src={user?.photoURL} alt="" /> : <FaUserAlt />
-                    }
-                </div>
-                <div>
-                    {
-                        user && user.uid ? <button onClick={handleLogout} className='btn btn-sm btn-warning rounded-2xl mx-2'>Sign Out</button> :
-                            <><Link className='mx-2' to='/login'>Login</Link>
-                                <Link className='mx-2' to='/signup'>Sign Up</Link></>
-                    }
+
+
+                <div className={open ? 'hidden' : 'block'}>
+                    <div className='mx-auto'>
+                        <Link className='mx-2' to='/'>Home</Link>
+                        <Link className='mx-2' to='/courses'>Courses</Link>
+
+                    </div>
+                    <button onClick={() => setDark(!dark)} className='flex items-center'>
+                        <span className='mx-1'>Dark</span> {dark ? <FaToggleOff /> : <FaToggleOn />}
+                    </button>
+
+                    <div>
+                        {
+                            <p className='mx-2'>{user ? <>{user.displayName}</> : <></>}</p>
+                        }
+                        {
+                            user?.photoURL ? <img className='h-8 w-8 rounded-full' src={user?.photoURL} alt="" /> : <FaUserAlt />
+                        }
+                    </div>
+                    <div>
+                        {
+                            user && user.uid ? <button onClick={handleLogout} className='btn btn-sm btn-warning rounded-2xl mx-2'>Sign Out</button> :
+                                <><Link className='mx-2' to='/login'>Login</Link>
+                                    <Link className='mx-2' to='/signup'>Sign Up</Link></>
+                        }
+                    </div>
                 </div>
 
 
 
             </div>
+
+
+
+
         </div>
     );
 };
