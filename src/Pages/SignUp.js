@@ -13,6 +13,7 @@ const SignUp = () => {
         event.preventDefault();
         const form = event.target;
         const fullName = form.name.value;
+        const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
 
@@ -22,7 +23,7 @@ const SignUp = () => {
                 const user = result.user;
                 // console.log(user)
                 // update user displayName and photo
-                updateUserProfile(fullName)
+                updateUserProfile(fullName, photo)
                     .then(() => {
                         console.log(user.displayName)
                     })
@@ -52,6 +53,12 @@ const SignUp = () => {
                                     <span className="label-text">Full Name</span>
                                 </label>
                                 <input type="text" name='name' placeholder="your full name" className="input input-bordered" />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Photo URL</span>
+                                </label>
+                                <input type="text" name='photo' placeholder="photo url here" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">

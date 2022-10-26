@@ -1,5 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
 import { AuthContext } from '../contexts/UserContext';
 
 const Profile = () => {
@@ -9,6 +10,16 @@ const Profile = () => {
 
     // update profile
     const handleSubmit = (event) => {
+        toast.success('🦄 Wow so easy!', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
 
         // get form values
         event.preventDefault();
@@ -17,13 +28,13 @@ const Profile = () => {
         const password = form.password.value;
         updateUserProfile(fullName)
             .then(() => {
-                console.log(user.displayName)
+
             })
             .catch(err => console.error(err));
 
         updateUserPassword(password)
             .then(() => {
-                console.log('success')
+
             })
             .catch(err => console.error(err))
 
@@ -60,6 +71,7 @@ const Profile = () => {
                     </div>
                 </form>
             </div>
+
         </div>
     );
 };

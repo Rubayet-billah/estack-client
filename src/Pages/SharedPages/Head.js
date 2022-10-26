@@ -58,15 +58,15 @@ const Head = () => {
             </div>
             <div className="navbar-end mr-4 md:mr-8">
                 <div className='flex items-center'>
-                    <button onClick={() => setDark(!dark)} className='flex items-center'>
+                    <button onClick={() => setDark(!dark)} className='flex items-center mx-3'>
                         <span className='mx-1 text-sm hidden md:inline'>Theme</span> {dark ? <FaToggleOff /> : <FaToggleOn />}
                     </button>
-                    {
-                        <p className='mx-2 font-bold'>{user ? <>{user.displayName}</> : <></>}</p>
-                    }
-                    {
-                        user?.photoURL ? <Link to='/profile'><img className='h-8 w-8 rounded-full' src={user?.photoURL} alt="" /></Link> : <FaUserAlt />
-                    }
+
+                    <div title={user?.displayName || 'No Author'}>
+                        {
+                            user?.photoURL ? <Link to='/profile'><img className='h-8 w-8 rounded-full' src={user?.photoURL} alt="" /></Link> : <FaUserAlt />
+                        }
+                    </div>
                 </div>
             </div>
         </div>

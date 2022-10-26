@@ -14,7 +14,7 @@ const UserContext = ({ children }) => {
     // set loading state for handle private route location
     const [loader, setLoader] = useState(true);
     // theme toggle state
-    const [dark, setDark] = useState(false)
+    const [dark, setDark] = useState(true)
 
     // create various methods auth provider
     const googleProvider = new GoogleAuthProvider();
@@ -45,10 +45,11 @@ const UserContext = ({ children }) => {
     }
 
     // update user profile
-    const updateUserProfile = (fullName) => {
+    const updateUserProfile = (fullName, photo) => {
         setLoader(true)
         return updateProfile(auth.currentUser, {
-            displayName: fullName
+            displayName: fullName,
+            photoURL: photo
         })
     }
 
