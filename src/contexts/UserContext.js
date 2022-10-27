@@ -12,7 +12,7 @@ const UserContext = ({ children }) => {
     // set user in user state
     const [user, setUser] = useState(null);
     // set loading state for handle private route location
-    const [loader, setLoader] = useState(true);
+    const [loader, setLoader] = useState(false);
     // theme toggle state
     const [dark, setDark] = useState(true)
 
