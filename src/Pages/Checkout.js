@@ -3,7 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import { FaSmile } from 'react-icons/fa';
 
 const Checkout = () => {
-    const { id, name, img, details, instructor, duration, fee } = useLoaderData();
+    const { name, img, details, instructor, duration, fee } = useLoaderData();
     return (
         <div>
             <h2 className='text-3xl md:text-6xl text-center'>Checkout our <span className='font-bold'>{name}</span> course <FaSmile className='inline' /></h2>

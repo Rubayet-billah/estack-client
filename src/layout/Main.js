@@ -1,6 +1,5 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Head from '../Pages/SharedPages/Head';
 import Header from '../Pages/SharedPages/Header';
 
 const Main = () => {
@@ -12,8 +11,7 @@ const Main = () => {
     }
     return (
         <div style={bgImg}>
-            {/* <Header></Header> */}
-            <Head></Head>
+            <Header></Header>
             <section className='container mx-auto'>
                 <Outlet></Outlet>
             </section>
