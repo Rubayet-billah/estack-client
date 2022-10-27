@@ -42,7 +42,10 @@ const Header = () => {
                         </div>
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">EStack</a>
+                <Link className="normal-case text-2xl md:text-4xl font-bold lg:ml-16">
+                    <span className='text-secondary'>E</span>
+                    <span className='text-primary ml-1'>Stack</span>
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
