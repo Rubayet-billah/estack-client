@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Pdf from "react-to-pdf";
+import { FaPrint } from 'react-icons/fa';
 
 const CourseDetails = () => {
     const { id, name, img, details, instructor, fee } = useLoaderData();
@@ -10,7 +11,11 @@ const CourseDetails = () => {
         <div className='my-5'>
             <div>
                 <Pdf targetRef={ref} filename="code-example.pdf">
-                    {({ toPdf }) => <button className='btn btn-sm md:btn-md btn-secondary block ml-auto' onClick={toPdf}>Download Pdf</button>}
+                    {({ toPdf }) => <button className='btn btn-sm md:btn-md btn-secondary block ml-auto' onClick={toPdf}>
+                        <div className='flex items-center'>
+                            <FaPrint /> <span className='ml-2'>Pdf</span>
+                        </div>
+                    </button>}
                 </Pdf>
             </div>
             <div className='mx-4 my-8'>
