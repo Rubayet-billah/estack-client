@@ -15,7 +15,7 @@ const Home = () => {
             </div>
             <div className='md:w-1/2 flex items-center'>
                 <div>
-                    <h1 className='text-4xl md:text-6xl font-bold'>Welcome to Crash Learn</h1>
+                    <h1 className='text-4xl md:text-6xl font-bold'>Welcome to LEarn</h1>
                     <p>It will be enjoyable for you to join us . Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium, repellendus dolorum libero quae, corrupti non error porro doloremque ipsam deleniti ea debitis. Illum repellat libero laboriosam, quo eveniet dolore officiis.</p>
                     <Link to='/courses'>
                         <button className='btn btn-primary mr-3'>Get Start</button>

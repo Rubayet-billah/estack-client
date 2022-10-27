@@ -3,7 +3,6 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { FaUserAlt, FaToggleOn, FaToggleOff } from 'react-icons/fa';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/UserContext';
-import { useState } from 'react';
 
 const Header = () => {
     const { user, logoutUser, dark, setDark } = useContext(AuthContext);
@@ -39,7 +38,7 @@ const Header = () => {
                         </div>
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                <a className="btn btn-ghost normal-case text-xl">LEarn</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

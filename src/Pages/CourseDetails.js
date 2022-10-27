@@ -19,7 +19,7 @@ const CourseDetails = () => {
                 </Pdf>
             </div>
             <div className='mx-4 my-8'>
-                <h2 className='text-center text-3xl md:text-6xl'>Here is course details.Just Enroll now and your journey will begin with us.</h2>
+                <h2 className='text-center text-3xl md:text-6xl'>Here is course details.Checkout now and your journey will begin with us.</h2>
             </div>
             <div ref={ref} className="card card-compact mx-4 md:w-96 md:mx-auto bg-base-100 shadow-xl">
                 <figure><img src={img} alt="" /></figure>
