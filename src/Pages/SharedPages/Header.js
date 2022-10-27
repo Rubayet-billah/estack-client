@@ -29,10 +29,13 @@ const Header = () => {
                         <li><Link className='mx-2' to='/'>Home</Link></li>
                         <li><Link className='mx-2' to='/courses'>Courses</Link></li>
                         <li><Link className='mx-2' to='/blogs'>Blogs</Link></li>
-                        <li><Link className='mx-2' to='/profile'>Profile</Link></li>
+                        <li><Link className='mx-2' to='/faq'>FAQ</Link></li>
                         <div>
                             {
-                                user && user.uid ? <button onClick={handleLogout} className='btn btn-sm btn-warning rounded-2xl mx-2'>Sign Out</button> :
+                                user && user.uid ? <>
+                                    <li><Link className='mx-2' to='/profile'>Profile</Link></li>
+                                    <button onClick={handleLogout} className='btn btn-sm btn-warning rounded-2xl mx-2'>Sign Out</button>
+                                </> :
                                     <><li><Link className='mx-2' to='/login'>Login</Link></li>
                                         <li><Link className='mx-2' to='/signup'>Sign Up</Link></li></>
                             }
@@ -46,15 +49,21 @@ const Header = () => {
                     <li><Link className='mx-2' to='/'>Home</Link></li>
                     <li><Link className='mx-2' to='/courses'>Courses</Link></li>
                     <li><Link className='mx-2' to='/blogs'>Blogs</Link></li>
-                    <li><Link className='mx-2' to='/profile'>Profile</Link></li>
-                </ul>
-                <div>
+                    <li><Link className='mx-2' to='/faq'>FAQ</Link></li>
+
+
                     {
-                        user && user.uid ? <button onClick={handleLogout} className='btn btn-sm btn-warning rounded-2xl mx-2'>Sign Out</button> :
-                            <><Link className='mx-2' to='/login'>Login</Link>
-                                <Link className='mx-2' to='/signup'>Sign Up</Link></>
+                        user && user.uid ? <>
+                            <li><Link className='mx-2' to='/profile'>Profile</Link></li>
+                            <button onClick={handleLogout} className='btn btn-sm btn-warning rounded-2xl mx-2'>Sign Out</button>
+                        </> :
+                            <>
+                                <li><Link className='mx-2' to='/login'>Login</Link></li>
+                                <li><Link className='mx-2' to='/signup'>Sign Up</Link></li>
+                            </>
                     }
-                </div>
+
+                </ul>
             </div>
             <div className="navbar-end mr-4 md:mr-8">
                 <div className='flex items-center'>
