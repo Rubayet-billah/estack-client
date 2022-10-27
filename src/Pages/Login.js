@@ -3,9 +3,13 @@ import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/UserContext';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
+import { useState } from 'react';
 
 const Login = () => {
     const { loginUser, googleLogin, githubLogin } = useContext(AuthContext);
+    // useState for handle login errors
+    const [error, setError] = useState('');
+
     const navigate = useNavigate();
 
     const location = useLocation();
@@ -24,9 +28,12 @@ const Login = () => {
                 const user = result.user;
                 console.log(user)
                 form.reset();
+                setError('')
                 navigate(from, { replace: true })
             })
-            .catch(err => console.error(err))
+            .catch(err => {
+                setError(err.message)
+            })
     }
 
     // handle google log in
@@ -74,6 +81,7 @@ const Login = () => {
                                     New to this site? <Link to='/signup' className='text-blue-600'>Signup Here</Link>
                                 </label>
                             </div>
+                            <p className='text-red-500'>{error}</p>
                             <div className="form-control mt-6">
                                 <button type='submit' className="btn btn-primary">Login</button>
                             </div>

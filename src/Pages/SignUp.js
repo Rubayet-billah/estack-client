@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/UserContext';
 
 const SignUp = () => {
     const { user, createUser, updateUserProfile } = useContext(AuthContext);
+    // useState for handle sign up errors
+    const [error, setError] = useState('');
 
     const navigate = useNavigate();
 
@@ -28,11 +30,14 @@ const SignUp = () => {
                         console.log(user.displayName)
                     })
                     .catch(err => console.error(err))
+                setError('');
                 form.reset();
                 navigate('/')
 
             })
-            .catch(err => console.error(err))
+            .catch(err => {
+                setError(err.message)
+            })
 
 
     }
@@ -75,6 +80,7 @@ const SignUp = () => {
                                     Already have an account? <Link to='/login' className='text-blue-600'>Login here</Link>
                                 </label>
                             </div>
+                            <p className='text-red-500'>{error}</p>
                             <div className="form-control mt-6">
                                 <button type='submit' className="btn btn-primary">Sign Up</button>
                             </div>
