@@ -2,8 +2,9 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <div>
-            <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+        <div className='mx-2'>
+            <h2 className='text-center text-3xl md:text-6xl my-8'>Welcome to our Blogs</h2>
+            <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box my-3">
                 <div className="collapse-title text-xl font-medium">
                     What is CORS?
                 </div>
@@ -12,7 +13,7 @@ const Blog = () => {
                 </div>
             </div>
 
-            <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+            <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box my-3">
                 <div className="collapse-title text-xl font-medium">
                     Why are you using firebase? What other options do you have to implement authentication?
                 </div>
@@ -32,7 +33,7 @@ const Blog = () => {
                 </div>
             </div>
 
-            <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+            <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box my-3">
                 <div className="collapse-title text-xl font-medium">
                     How does the private route work?
                 </div>
@@ -44,7 +45,7 @@ const Blog = () => {
                 </div>
             </div>
 
-            <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+            <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box my-3">
                 <div className="collapse-title text-xl font-medium">
                     What is Node? How does Node work?
                 </div>
