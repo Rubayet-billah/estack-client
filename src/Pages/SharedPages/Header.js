@@ -42,7 +42,7 @@ const Header = () => {
                         </div>
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">LEarn</a>
+                <a className="btn btn-ghost normal-case text-xl">EStack</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
@@ -55,7 +55,7 @@ const Header = () => {
                     {
                         user && user.uid ? <>
                             <li><Link className='mx-2' to='/profile'>Profile</Link></li>
-                            <button onClick={handleLogout} className='btn btn-sm btn-warning rounded-2xl mx-2'>Sign Out</button>
+                            <button onClick={handleLogout} className='btn btn-sm btn-warning rounded-2xl my-auto'>Sign Out</button>
                         </> :
                             <>
                                 <li><Link className='mx-2' to='/login'>Login</Link></li>

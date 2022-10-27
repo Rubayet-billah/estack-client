@@ -1,6 +1,6 @@
 # Project Name
 
-Site Name [LEarn](https://assignment-10-client-78ac3.web.app/)
+Site Name [EStack](https://assignment-10-client-78ac3.web.app/)
 
 Live site link [https://assignment-10-client-78ac3.web.app/]
 

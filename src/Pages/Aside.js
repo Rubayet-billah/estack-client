@@ -15,7 +15,7 @@ const Aside = () => {
     }, [])
     return (
         <div>
-            <ul className="menu bg-base-200 w-56 rounded">
+            <ul className="menu bg-base-200 w-56 rounded p-5">
                 <h2 className='text-3xl text-center'>All Courses</h2>
                 {
                     courses.map(cs => <AsideList

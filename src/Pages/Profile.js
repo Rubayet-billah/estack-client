@@ -1,6 +1,5 @@
 import React from 'react';
 import { useContext } from 'react';
-import { toast, ToastContainer } from 'react-toastify';
 import { AuthContext } from '../contexts/UserContext';
 
 const Profile = () => {
@@ -10,16 +9,6 @@ const Profile = () => {
 
     // update profile
     const handleSubmit = (event) => {
-        toast.success('🦄 Wow so easy!', {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-        });
 
         // get form values
         event.preventDefault();
@@ -42,8 +31,8 @@ const Profile = () => {
     }
     return (
         <div>
-            <h1 className='text-6xl'>Edit Profile</h1>
-            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <h1 className='text-3xl md:text-6xl text-center md:my-5'>Edit Profile</h1>
+            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto">
                 <form onSubmit={handleSubmit} className="card-body">
                     <div className="form-control">
                         <label className="label">
