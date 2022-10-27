@@ -5,7 +5,7 @@ import Header from '../Pages/SharedPages/Header';
 const Main = () => {
 
     return (
-        <div>
+        <div className='min-h-screen'>
             <Header></Header>
             <section className='container mx-auto'>
                 <Outlet></Outlet>

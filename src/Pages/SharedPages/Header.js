@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
-import { FaUserAlt, FaToggleOn, FaToggleOff } from 'react-icons/fa';
+import { FaUserAlt, FaToggleOn, FaToggleOff, FaCodepen } from 'react-icons/fa';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/UserContext';
 
@@ -43,7 +43,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <Link className="normal-case text-2xl md:text-4xl font-bold lg:ml-16">
-                    <span className='text-secondary'>E</span>
+                    <span className='text-secondary'><FaCodepen className='inline-block mb-1 md:mb-2' />E</span>
                     <span className='text-primary ml-1'>Stack</span>
                 </Link>
             </div>
