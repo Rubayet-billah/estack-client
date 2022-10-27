@@ -1,8 +1,8 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const CourseDetails = () => {
-    const { name, img, details, instructor, fee } = useLoaderData();
+    const { id, name, img, details, instructor, fee } = useLoaderData();
     return (
         <div className='my-5'>
             <div className='mx-4 my-8'>
@@ -16,7 +16,7 @@ const CourseDetails = () => {
                     <h3 className='text-2xl font-semibold'>Instructor: {instructor}</h3>
                     <div className="card-actions justify-between">
                         <h2 className='text-primary text-4xl font-bold'>${fee}</h2>
-                        <button className="btn btn-primary">Enroll</button>
+                        <Link to={`/checkout/${id}`}><button className='btn btn-primary'>Get Premium Access</button></Link>
                     </div>
                 </div>
             </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SingleCourse = ({ course }) => {
-    const { id, name, img, details, fee, duration, credit } = course;
+    const { id, name, img, duration, credit } = course;
     return (
         <div className='m-3 rounded-lg border border-gray-900'>
             <img className='rounded-lg' src={img} alt="" />
@@ -13,7 +13,7 @@ const SingleCourse = ({ course }) => {
                         <p>Credit: {credit}</p>
                         <p>Duration: {duration}h</p>
                     </div>
-                    <Link to={`/courses/${id}`}><button className='btn btn-outline'>see details</button></Link>
+                    <Link to={`/courses/${id}`}><button className='btn btn-sm md:btn-md btn-outline'>Details</button></Link>
                 </div>
             </div>
         </div>

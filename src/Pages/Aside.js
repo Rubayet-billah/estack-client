@@ -9,7 +9,7 @@ const Aside = () => {
     console.log(courses)
 
     useEffect(() => {
-        fetch('http://localhost:5000/courses')
+        fetch('https://assignment-10-server-virid.vercel.app/courses')
             .then(res => res.json())
             .then(data => setCourses(data))
     }, [])

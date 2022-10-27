@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
+import Checkout from "../Pages/Checkout";
 import CourseDetails from "../Pages/CourseDetails";
 import Courses from "../Pages/Courses";
 import ErrorPage from "../Pages/ErrorPage";
@@ -28,17 +29,22 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/courses',
-                loader: () => fetch('http://localhost:5000/courses'),
+                loader: () => fetch('https://assignment-10-server-virid.vercel.app/courses'),
                 element: <Courses></Courses>
             },
             {
                 path: '/courses/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`),
+                loader: ({ params }) => fetch(`https://assignment-10-server-virid.vercel.app/courses/${params.id}`),
                 element: <PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>
             },
             {
                 path: '/profile',
                 element: <PrivateRoute><Profile></Profile></PrivateRoute>
+            },
+            {
+                path: '/checkout/:id',
+                // loader: () => fetch(''),
+                element: <PrivateRoute><Checkout></Checkout></PrivateRoute>
             }
         ],
         errorElement: <ErrorPage></ErrorPage>
