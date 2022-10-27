@@ -1,8 +1,10 @@
-# Project Details
+# Project Name
 
-Project name [LEarn](https://assignment-10-client-78ac3.web.app/).
+Site Name [LEarn](https://assignment-10-client-78ac3.web.app/)
 
-## Available Scripts
+Live site link [https://assignment-10-client-78ac3.web.app/]
+
+## Project Features
 
 - Its a Educational website for learning
 - Its a single page application (SPA)
