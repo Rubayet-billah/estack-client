@@ -6,7 +6,8 @@ import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { useState } from 'react';
 
 const Login = () => {
-    const { loginUser, googleLogin, githubLogin } = useContext(AuthContext);
+    const { loginUser, googleLogin, githubLogin, user } = useContext(AuthContext);
+    console.log(user)
     // useState for handle login errors
     const [error, setError] = useState('');
 
@@ -42,7 +43,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
-                navigate('/')
+                navigate(from, { replace: true })
             })
             .catch(err => console.error(err))
     }
@@ -52,7 +53,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
-                navigate('/')
+                navigate(from, { replace: true })
             })
             .catch(err => console.error(err))
     }

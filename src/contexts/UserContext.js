@@ -65,13 +65,25 @@ const UserContext = ({ children }) => {
 
 
     // observe user using onAuthSateChange
+    // useEffect(() => {
+    //     const unsubscribe = () => {
+    //         onAuthStateChanged(auth, user => {
+    //             console.log(user)
+    //             setUser(user);
+    //             setLoader(false)
+    //         })
+    //     }
+    //     return () => unsubscribe();
+    // }, [])
+
     useEffect(() => {
-        const unsubscribe = () => {
+        const unsubscribe =
             onAuthStateChanged(auth, user => {
+                console.log(user)
                 setUser(user);
                 setLoader(false)
-            })
-        }
+            }
+            )
         return () => unsubscribe();
     }, [])
 

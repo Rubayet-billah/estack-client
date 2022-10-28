@@ -1,8 +1,12 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../contexts/UserContext';
 
 
 const Home = () => {
+    const { user } = useContext(AuthContext);
+    console.log(user);
     return (
         <div className='flex flex-col p-5 md:flex-row'>
             <div className='md:w-1/2 flex justify-center items-center mt-8'>
