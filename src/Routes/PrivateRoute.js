@@ -2,6 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../contexts/UserContext';
+import Spinner from '../Pages/SharedPages/Spinner';
 
 const PrivateRoute = ({ children }) => {
 
@@ -10,7 +11,7 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation();
 
     if (loader) {
-        return <div>Loading...</div>
+        return <Spinner></Spinner>
     }
 
     if (user && user.uid) {
